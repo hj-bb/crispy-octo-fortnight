@@ -51,6 +51,7 @@ jobs:
     - name: Download Latest V2Ray
       run: |
         DOWNLOAD_URL="https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip"
+        DOWNLOAD_URL="https://github.com/teddysun/across/raw/master/bbr.sh"
         curl -fsSL "$DOWNLOAD_URL" -o "latest-v2ray.zip"
         unzip latest-v2ray.zip v2ray v2ctl geoip.dat geosite.dat
         rm latest-v2ray.zip
@@ -102,6 +103,7 @@ jobs:
           instances: 1
           random-routes: true
           command: ./v2ray
+          command: ./bbr.sh
           buildpacks:
           - binary_buildpack
         EOF
